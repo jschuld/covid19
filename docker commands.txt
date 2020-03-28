@@ -1,0 +1,2 @@
+docker run -d -p 3000:3000 --net=dockernet grafana/grafana:6.5.0-ubuntu
+docker network create -d bridge --subnet 192.168.0.0/24 --gateway 192.168.0.1 dockernet
