@@ -10,6 +10,6 @@ cp COVID-19/csse_covid_19_data/csse_covid_19_time_series/time_series_covid19_rec
 cp COVID-19/csse_covid_19_data/csse_covid_19_time_series/time_series_covid19_deaths_global.csv ./deaths.csv
 go run cvsreader.go >covidconverted.csv 
 cd csv-to-influxdb
-python3 csv-to-influxdb.py --create --dbname covid19 --input ../covidconverted.csv -d ';' --tagcolumns "country,province" --fieldcolumns "lat,lon,confirmed,recovered,current,deaths,confirmed-increase" --timecolumn date --timeformat '%m/%d/%y' --metricname confirmed -s 104.251.210.168:8086
+python3 csv-to-influxdb.py --create --dbname covid19 --input ../covidconverted.csv -d ';' --tagcolumns "country,province" --fieldcolumns "lat,lon,confirmed,recovered,current,deaths,confirmed-increase" --timecolumn date --timeformat '%m/%d/%y' --metricname confirmed
 cd ..
 echo "Done"
